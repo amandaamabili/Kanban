@@ -1,0 +1,32 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  background-color: var(--text-header);
+}
+.header input{
+  height:1rem;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 1px;
+  font-size:1rem;
+  color: var(--text-title);
+  background-color: var(--text-header);
+  box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    border-radius: 6px 6px 6px 6px;
+    text-align: center;
+    width:70%;
+
+}
+.header button img{
+  margin-top: 0px;
+  padding-left: -10px;
+
+
+}
+.card-footer{
+  display: flex;
+  justify-content: center;
+}

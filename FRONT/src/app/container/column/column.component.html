@@ -1,0 +1,25 @@
+<div class="bloco card" style="width: 20rem">
+  <div class="card-header d-flex justify-content-center">
+    <h5>{{ column }}</h5>
+  </div>
+
+  <app-card
+    *ngFor="let card of cards"
+    [column]="column"
+    [card]="card"
+    (cardChanged)="cardChange(card)"
+  >
+  </app-card>
+
+  <div class="card-header d-flex justify-content-center">
+    <button
+      type="button"
+      class="btn btn-"
+      (click)="createCard()"
+      [ngClass]="column === 'ToDo' ? 'visible' : 'invisible'"
+    >
+      <h6>Add task</h6>
+      <img src="../../assets/icons8-mais-24.png" />
+    </button>
+  </div>
+</div>

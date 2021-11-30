@@ -1,0 +1,49 @@
+:root {
+  --background :#C8C6C6 ;
+  --header: #4B6587;
+  --border-blue: #A8D3DA;
+  --border-yellow: #F3ECB8;
+  --border-orange: #F5CAB3;
+  --text-title: #363f5f;
+  --text-body: #4B6587;
+  --text-header: #ECF0F1;
+
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    background: var(--background);
+    color: var(--text-body);
+
+
+
+}
+body, input, textarea, button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+h1,h2,h3,h4,h5,h6, strong{
+  font-weight: 400;
+  color: var(--text-body)
+}
+
+
+
+button{
+  cursor: pointer;
+}
+[disabled]{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+html{
+  @media (max-width: 1080px){
+    font-size: 93.75%;
+  }
+  @media (max-width: 720){
+    font-size: 87.5%;
+  }
+}

@@ -1,0 +1,86 @@
+<div *ngIf="card.lista == column">
+  <form [formGroup]="form"
+    class="
+      card-header
+      align-items-center
+      text-center
+      d-flex
+      justify-content-between
+      p-1
+    "
+  >
+
+  <div class="form-group">
+    <input
+      class="form-control"
+      formControlName="titulo"
+      id="titulo"
+      type="text"
+      placeholder="Title"
+      [(ngModel)]="title"
+      [readonly]="!editMode"
+    />
+  </div>
+
+    <button
+      type="button"
+      class="editar btn btn-"
+      (click)="toggleEditMode()"
+      *ngIf="!editMode"
+    >
+      <img src="../../assets/editar.png" />
+    </button>
+
+  </form>
+  <form [formGroup]="form">
+  <div class="card-text p-1  form-group">
+    <textarea
+      class="form-control"
+      placeholder="Description"
+      formControlName="conteudo"
+      id="conteudo"
+      [readonly]="!editMode"
+      [(ngModel)]="description"
+      >{{ description }}</textarea
+    >
+  </div>
+
+  <div
+    class="card-footer d-flex justify-content-between bg-light p-1"
+    *ngIf="!editMode"
+  >
+    <button
+      type="button"
+      class="esquerda btn btn-"
+      (click)="moveLeft()"
+      [ngClass]="firstColumn ? 'invisible' : 'visible'"
+    >
+      <img src="../../assets/setaEsquerda.png" />
+    </button>
+
+    <button type="button" class="excluir btn btn-" (click)="deleteCard()">
+      <img src="../../assets/remover.png" />
+    </button>
+
+    <button
+      type="button"
+      class="direita btn btn-"
+      [ngClass]="card.id == '' ? 'invisible' : 'visible'"
+      (click)="moveRight()"
+      [ngClass]="lastColumn ? 'invisible' : 'visible'"
+    >
+      <img src="../../assets/setaDireita.png" />
+    </button>
+  </div>
+
+  <div class="card-footer d-flex justify-content-between p-1" *ngIf="editMode">
+    <button type="button" class="direita btn btn-" (click)="cancelEdition()">
+      <img src="../../assets/cancelar.png" />
+    </button>
+
+    <button type="submit" class="direita btn btn-" (click)="saveCard()">
+      <img src="../../assets/salvar.png" />
+    </button>
+  </div>
+</form>
+</div>
